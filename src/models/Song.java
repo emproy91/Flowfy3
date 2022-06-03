@@ -13,7 +13,7 @@ public class Song {
     private String description;
 
     public Song(int iD, String title, Date date, int duration, String genre, String cover, String description) {
-        this.iD = iD;
+        this.iD = nID();
         this.title = title;
         this.date = date;
         this.duration = duration;
@@ -22,17 +22,25 @@ public class Song {
         this.description = description;
 
     }
-
+    public int nID() {
+        int _iD = (int) (Math.random() * 999);
+        return _iD;
+    }
     @Override
     public String toString() {
         return "Song{" +
-                "iD=" + iD +
+                " iD=" + iD +
                 ", title='" + title + '\'' +
                 ", date=" + date +
                 ", duration=" + duration +
-                ", genre='" + genre + '\'' +
-                ", cover='" + cover + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+                ", genre='" + genre +"',"+ "\n"+
+                "      cover='" + cover + "'," + "\n"+
+                "      description='" + description + '\'' + "\n"+
+                "    }";
     }
+
+    /**
+     * Access methods.
+     * Setters and getters.
+     */
 }
