@@ -9,6 +9,23 @@ import models.Song;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Represents a manager of music.
+ *
+ * The entry point to run the program is the class
+ * main from where the Run File should be executed
+ *
+ *
+ * @version 1.00.000 2022-06-03, This class corresponds to version 1 of the system,
+ * no minor changes have been made.
+ * The last change was made on June 03, 2022.
+ *
+ * @author Mauricio Pérez Rojas.
+ * @author Luis Javier Rincon.
+ *
+ * @since 1,00,000
+ *
+ */
 public class Main {
     public static void main(String[] args) {
 
