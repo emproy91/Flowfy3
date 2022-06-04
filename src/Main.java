@@ -98,7 +98,7 @@ public class Main {
 
 
 
-    }
+}
 
 
 // Hi, I'm flowfy, your virtual assistant to manage your music.
