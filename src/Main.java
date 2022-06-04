@@ -1,11 +1,13 @@
+import models.Menu;
+import models.PlayList;
 import models.Song;
 ///////////////////////////////////
 /**
  * The necessary JDK classes are imported here.
  */
+
 import java.util.ArrayList;
 import java.util.Date;
-
 
 /**
  * Represents a manager of music.
@@ -38,8 +40,11 @@ public class Main {
         int mRelease = 05-1;
         int dRelease = 0;
         Date release = new Date( yRelease, mRelease, dRelease);
-        // System.out.println(release );
 
+        ArrayList<PlayList> playList = new ArrayList<>();
+        boolean flag = true;
+        String[] menu = {"Agregar cancion","Ver canciones","Crear Playlist", "Ordenar","Salir"};
+        System.out.println(release );
         /**
          * Represents an ArrayList to hold class objects.
          */
@@ -82,12 +87,18 @@ public class Main {
         library.add(song4);
         library.add(song5);
 
+        System.out.println(song4);
+        // System.out.println(nID());
 
         System.out.println("Local library: " + "\n" + "      " + library);
+
+        Menu.show();
+    }
+    // Generate and save a new random id.
+
 
 
     }
 
-}
 
 // Hi, I'm flowfy, your virtual assistant to manage your music.
