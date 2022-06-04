@@ -1,5 +1,9 @@
+import models.Menu;
+import models.PlayList;
 import models.Song;
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Main {
@@ -16,6 +20,9 @@ public class Main {
         int mRelease = 05-1;
         int dRelease = 0;
         Date release = new Date( yRelease, mRelease, dRelease);
+        ArrayList<PlayList> playList = new ArrayList<>();
+        boolean flag = true;
+        String[] menu = {"Agregar cancion","Ver canciones","Crear Playlist", "Ordenar","Salir"};
         System.out.println(release );
 
         Song s0 = new Song(1, "United", new Date(116, 3, 0),
@@ -51,6 +58,8 @@ public class Main {
 
         System.out.println(s4);
         // System.out.println(nID());
+
+        Menu.show();
     }
     // Generate and save a new random id.
 
