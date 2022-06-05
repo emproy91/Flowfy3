@@ -5,16 +5,28 @@ import javax.swing.*;
 public class Menu {
 
     public static void show(){
-        String[] menu = {"Agregar cancion","Ver canciones","Crear Playlist", "Ordenar","Salir"};
+
+        String[] menu = {"View songs","Create Playlist","Sort","Exit"};
         boolean flag = true;
         try {
             while (flag){
-                int menuOption = JOptionPane.showOptionDialog(null, "Menú de opciones", "MENÚ",
+                int menuOption = JOptionPane.showOptionDialog(null, "Main menu", "FLOWFY3",
                         JOptionPane.YES_NO_OPTION,JOptionPane.DEFAULT_OPTION,null,menu,"");
-                switch(menuOption+1){
+                switch(menuOption){
+                    case 0:
+                        System.out.println("Local library: " + "\n" + "      " + Library.localLibrary());
 
+                        break;
 
-                    case 5:
+                    case 1:
+                        System.out.println("LUIIIIIIS  please Create Playlist !!!!");
+                        break;
+
+                    case 2:
+                        System.out.println("Sort");
+                        break;
+
+                    case 3:
                         flag = false;
                         break;
                 }
@@ -23,4 +35,5 @@ public class Menu {
             System.out.println(e);
         }
     }
+
 }
