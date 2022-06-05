@@ -10,7 +10,11 @@ public class Menu {
 
 
     public static void show(){
+
         ArrayList<PlayList> playLists = new ArrayList<>();
+=======
+
+
         String[] menu = {"View songs","Create Playlist","Sort","Exit"};
         boolean flag = true;
         try {
