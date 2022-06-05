@@ -1,13 +1,18 @@
 package models;
 
+/*
+  The necessary JDK classes are imported here.
+ */
 import java.util.ArrayList;
 
 public class PlayList {
 
+    /*
+      Variables are created
+     */
     /**
      * Variables are created
      */
-
     String playList;
     ArrayList<Song> songs = new ArrayList<>();
 
