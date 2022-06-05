@@ -131,17 +131,3 @@ public class Song {
         this.description = description;
     }
 }
-
-/**
- * Adjustment for account number and date of birth.
- * @param yBirth Year of birth adjusted to the Date library.
- * @param mBirth Month of birth adjusted to the Date library.
- * @param dBirth Day of birth set to the Date library.
-
-int yRelease = 2002-1900;
-int mRelease = 05-1;
-int dRelease = 0;
-Date release = new Date( yRelease, mRelease, dRelease);
-// System.out.println(release );
- */
-
