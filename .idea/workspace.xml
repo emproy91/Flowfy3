@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
 
+    <list default="true" id="b8d4c3ac-a8c6-4473-a9c5-732d47fafa31" name="Changes" comment="Delete line 2 coment Main" />
+
     <list default="true" id="b8d4c3ac-a8c6-4473-a9c5-732d47fafa31" name="Changes" comment="workspace.xml again 5">
       <change afterPath="$PROJECT_DIR$/src/models/Library.java" afterDir="false" />
  main
@@ -13,8 +15,11 @@
       <change beforePath="$PROJECT_DIR$/src/models/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Song.java" afterDir="false" />
+
     </list>
+
  6cc205204785884a23a41c813350d8f0709c7eca
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
