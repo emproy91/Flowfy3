@@ -82,4 +82,25 @@ public class Behaviors {
         }
         return librarySort;
     }
+
+    public static ArrayList<Song> filterYear(ArrayList<Song> list, int year) {
+        ArrayList<Song> libraryFilter = new ArrayList<>();
+        for (Song item : list) {
+            int yearSong = item.getDate().getYear() + 1900;
+            if (yearSong == year) {
+                libraryFilter.add(item);
+            }
+        }
+        return libraryFilter;
+    }
+
+    public static ArrayList<Song> filterGenre(ArrayList<Song> list, String genre) {
+        ArrayList<Song> libraryFilter = new ArrayList<>();
+        for (Song item : list) {
+            if (item.getGenre() == genre) {
+                libraryFilter.add(item);
+            }
+        }
+        return libraryFilter;
+    }
 }
