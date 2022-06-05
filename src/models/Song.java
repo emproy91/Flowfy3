@@ -1,13 +1,27 @@
 package models;
-/**
- * Represents the information of a song.
- * @author Mauricio Pérez Rojas.
- * @author Luis Javier Rincon.
+
+/*
+  The necessary JDK classes are imported here.
  */
 import java.util.Date;
 
+/**
+ * Represents the information of a song.
+ *
+ * @version 1.00.000 2022-06-05, This class corresponds to version 1 of the system,
+ * no minor changes have been made.
+ * The last change was made on June 05, 2022.
+ *
+ * @author Mauricio Pérez Rojas.
+ *
+ * @since 1, 00, 000
+ */
+
 public class Song {
 
+    /**
+     * Variables are created
+     */
     private int iD;
     private String title;
     private Date date;
@@ -34,7 +48,7 @@ public class Song {
      * @param description Song description.
      */
     public Song(int iD, String title, Date date, int duration, String genre, String cover, String description) {
-        this.iD = nID();
+        this.iD = iD;
         this.title = title;
         this.date = date;
         this.duration = duration;
@@ -44,15 +58,6 @@ public class Song {
 
     }
 
-    /**
-     * Create a new random integer to identify the song.
-     * @return A new _iD.
-     */
-    public int nID() {
-        int _iD = (int) (Math.random() * 999);
-        // Generate and save a new random id.
-        return _iD;
-    }
 
     /**
      * Create a new character string with the parameters of the class.

@@ -1,51 +1,83 @@
 package models;
 
-
+/*
+  The necessary JDK classes are imported here.
+ */
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Objects;
+
+/**
+ * The Menu class provides access for users to interact with the song library manager.
+ *
+ * @version 1.00.000 2022-06-05, This class corresponds to version 1 of the system,
+ * no minor changes have been made.
+ * The last change was made on June 05, 2022.
+ *
+ * @author Mauricio Pérez Rojas.
+ * @author Luis Javier Rincon.
+ *
+ * @since 1, 00, 000
+ */
+
 
 public class Menu {
 
+    /**
+     * Show Menu to users in a pop-up window.
+     */
     public static void show() {
-
 
         ArrayList<PlayList> playLists = new ArrayList<>();
 
         String[] menu = {"Library songs", "Playlist", "Sort", "Filters", "Exit"};
 
-        String[] menuS = {"Rising duration", "Ralling duration", "Rising date", "Falling date", "Cancel"};
+        String[] menuS = {"Rising duration", "falling duration", "Rising date", "Falling date", "Cancel"};
 
         String[] menuF ={"Year filter", "Genre filter", "Cancel"};
 
         boolean flag = true;
+        //Flag to avoid inadvertent closings by the user.
+
         try {
+            //exception to handle typing errors
+
             while (flag) {
-                int menuOption = JOptionPane.showOptionDialog(null, "Main menu", "FLOWFY3",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.DEFAULT_OPTION, null, menu, "");
+                 Icon music = new ImageIcon(Menu.class.getResource("/img/music.png"));
+                // (Icon) new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/img/music.png"))).getImage();
+                int menuOption = JOptionPane.showOptionDialog(null,
+                        "Main menu\n"+" \n"+"Look at the results in the output console.", "FLOWFY3",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.DEFAULT_OPTION, music, menu, "");
                 switch (menuOption) {
                     case 0:
+
+                        /*
+                          This option shows the local library of songs.
+                         */
                         System.out.println("Local library: " + "\n" + "      " + Library.localLibrary());
 
                         break;
 
                     case 1:
 
-                        /**
-                         * This is the menu for the create playlist option
+                        /*
+                          This is the menu for the create playlist option.
                          */
                         int playListOption = JOptionPane.showOptionDialog(null, "PlayList menu", "FLOWFY3",
-                                JOptionPane.YES_NO_OPTION, JOptionPane.DEFAULT_OPTION, null,
+                                JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null,
                                 new Object[]{"View playLists", "Create PlayList", "Cancel"}, "");
                         switch (playListOption) {
                             case 0:
-                                /**
-                                 * First case of the menu,two nested for loops
-                                 * to print in console the playlist
-                                 * with the name and songs of each playlist
+
+                                /*
+                                  First case of the menu,two nested for loops
+                                  to print in console the playlist
+                                  with the name and songs of each playlist
                                  */
                                 if (playLists.size() < 1 ){
                                     System.out.println("Please, create a new playlist");
                                 }else {
+                                    System.out.println("your playlists  =>");
                                 for (PlayList p : playLists) {
                                         System.out.println(p.getPlayList());
                                         for (Song s : p.getSongs()) {
@@ -55,15 +87,15 @@ public class Menu {
                                     }
                                 }
                                 break;
-                            /**
-                             * Case 1 is when user wants to create a new playlist
+                            /*
+                              Case 1 is when user wants to create a new playlist
                              */
                             case 1:
 
                                 String name = JOptionPane.showInputDialog("Name to new playlist");
                                 boolean control = true;
                                 ArrayList<Song> finalSongs = new ArrayList<>();
-                                // lista is a variable that will hold the names of the songs
+                                // lists is a variable that will hold the names of the songs
                                 String[] lista = new String[Library.localLibrary().size()];
                                 ArrayList<String> picks = new ArrayList<>();
 
@@ -81,20 +113,20 @@ public class Menu {
                                     lista[i] = s.getTitle();
                                     i++;
                                 }
-                                /**
-                                 * this loop will ask the user if he wants to add more songs to the playlist
+                                /*
+                                  this loop will ask the user if he wants to add more songs to the playlist
                                  */
                                 while (control) {
-                                    //New lista is a String array tha will hold the updated list names in each iteration
+                                    //New lists is a String array tha will hold the updated list names in each iteration
                                     ArrayList<String> newLista = new ArrayList<>();
                                     if (lista.length > 0) {
                                         String pick = String.valueOf(JOptionPane.showInputDialog(null,
                                                 "Choose a song.", "Menu",
                                                 JOptionPane.QUESTION_MESSAGE, null, lista, ""));
 
-                                        /**
-                                         * This loop will help update the list of songs so the user can't choose
-                                         * a song he has already chosen.
+                                        /*
+                                          This loop will help update the list of songs so the user can't choose
+                                          a song he has already chosen.
                                          */
                                         for (int x = 0; x < lista.length; x++) {
                                             if (!lista[x].equals(pick)) {
@@ -102,18 +134,18 @@ public class Menu {
                                             }
                                         }
 
-                                        //lista is updated to show the new lista in case of the next iteration
+                                        //lists is updated to show the new list in case of the next iteration
                                         lista = newLista.toArray(new String[0]);
                                         picks.add(pick);
                                     }
 
-                                    /**
-                                     * User is asked if he wants to add another song.
-                                     * In case he doesn't want to, the loop ends and the values are stored
-                                     * in the playlist ArrayList
+                                    /*
+                                      User is asked if he wants to add another song.
+                                      In case he doesn't want to, the loop ends and the values are stored
+                                      in the playlist ArrayList
                                      */
-                                    int check = JOptionPane.showOptionDialog(null, "Agregar otra cancion?", "Continuar?",
-                                            JOptionPane.YES_NO_OPTION, JOptionPane.DEFAULT_OPTION, null,
+                                    int check = JOptionPane.showOptionDialog(null, "Add another song?", "Continue?",
+                                            JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null,
                                             new Object[]{"Si", "No"}, "");
 
                                     if (check == 1) {
@@ -146,12 +178,13 @@ public class Menu {
                         break;
 
                     case 2:
-
+                        /*
+                          This option shows the ways to sort the songs.
+                         */
                         int mSort = JOptionPane.showOptionDialog(null, "Select sort type an property to show.",
                                 "FLOWFY3", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, menuS, "");
-                        ArrayList<Song> librarySort = new ArrayList<>();
+                        ArrayList<Song> librarySort;
                         switch (mSort) {
-
 
                                 case 0 -> {
                                     librarySort = Behaviors.sortRising(Library.localLibrary(), "duration");
@@ -187,9 +220,13 @@ public class Menu {
                         break;
 
                     case 3:
+
+                        /*
+                          This option shows the ways to filter the songs.
+                         */
                         int mFilter = JOptionPane.showOptionDialog(null, "Select property filtering to show.",
                                 "FLOWFY3", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, menuF, "");
-                        ArrayList<Song> libraryMatch = new ArrayList<>();
+                        ArrayList<Song> libraryMatch;
 
                         switch (mFilter) {
                             case 0 -> {
@@ -203,9 +240,9 @@ public class Menu {
                             case 1 -> {
                                 String[] optionGenreFilter = {"Rock", "House", "Pop", "Vallenato", "Llanera"};
                                 String genreFilter = (String) JOptionPane.showInputDialog(null, "Choose a gender.:",
-                                        "Genere filter", JOptionPane.QUESTION_MESSAGE, null, optionGenreFilter, optionGenreFilter[0]);
+                                        "Genre filter", JOptionPane.QUESTION_MESSAGE, null, optionGenreFilter, optionGenreFilter[0]);
                                 libraryMatch = Behaviors.filterGenre(Library.localLibrary(), genreFilter);
-                                System.out.println("Libreria filtrada por genero:\n");
+                                System.out.println("Library filtered by genre:\n");
                                 for (Song element : libraryMatch) {
                                     System.out.println(element);
                                 }
@@ -215,11 +252,16 @@ public class Menu {
                         break;
 
                     case 4:
+
+                        /*
+                          This option displays a button to end the application.
+                         */
                         flag = false;
                         break;
                 }
             }
         } catch (Exception e) {
+            //noinspection ThrowablePrintedToSystemOut
             System.out.println(e);
         }
     }
