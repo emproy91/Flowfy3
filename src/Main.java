@@ -1,5 +1,6 @@
 import models.Menu;
 import models.PlayList;
+
 /**
  * The necessary JDK classes are imported here.
  */
@@ -25,11 +26,21 @@ public class Main {
 
         ArrayList<PlayList> playList = new ArrayList<>();
 
+        /*
+        Behaviors.showList(Library.localLibrary());
+        Behaviors.getSortD(Library.localLibrary());
+        String x = "Sorted Songs by duration" + Library.localLibrary();
+        System.out.println(x);
+        Behaviors.showList(Library.localLibrary());
+         */
+
+
         welcome();
         Menu.show();
         // if (menu[0] == "View songs"){}
 
     }
+
 
     private static void welcome() {
 
